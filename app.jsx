@@ -9,7 +9,7 @@ class Home extends React.Component {
 					skills you need to launch a new career in front end web development.</p>
 				<p>We have thousands of videos created by expert teachers on web design and front end development. Our
 					library is continually refreshed with the latest on web technology so you will never fall behind.</p>
-				<hr/>
+				<hr />
 
 			</div>
 		);
@@ -31,23 +31,23 @@ class About extends React.Component {
 
 class Repos extends React.Component {
 	render() {
-		const {route} = this.props;
+		const { route } = this.props;
 		let CurrentList = null;
 		switch (route) {
 
 			case 'css':
-				CurrentList = ['How to Make a CSS', 'HTML CSS'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
+				CurrentList = ['How to Make a CSS', 'HTML CSS'].map((item, index) => {
+					return <li key={index}> {item} </li>
 				});
 				break;
 			case 'javascript':
-				CurrentList = ['How to Make a JS', 'HTML JS'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
+				CurrentList = ['How to Make a JS', 'HTML JS'].map((item, index) => {
+					return <li key={index}> {item} </li>
 				});
 				break;
 			default: //'html'
-				CurrentList = ['How to Make a Website', 'HTML Forms'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
+				CurrentList = ['How to Make a Website', 'HTML Forms'].map((item, index) => {
+					return <li key={index}> {item} </li>
 				});
 				break;
 		}
@@ -75,16 +75,14 @@ class Repos extends React.Component {
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state ={
+		this.state = {
 			route: window.location.hash.substr(1)
 		};
 	}
 	//  $(document).ready ()
 	componentDidMount() {
 		window.addEventListener('hashchange', () => {
-			//<a href="#/about">About</a>
-			//<li><a href='#/repos/html'>HTML</a></li>
-			console.log ( window.location.hash.substr(1) );
+			console.log(window.location.hash.substr(1));
 
 			this.setState({
 				route: window.location.hash.substr(1)
@@ -117,27 +115,24 @@ class App extends React.Component {
 				Child = Home;
 		}
 		return (
-         <div>
-            <header>App</header>{' '}
-            <menu>
-               <ul>
-                  <li>
-                     <a href="#/about">About</a>
-                  </li>{' '}
-                  <li>
-                     <a href="#/repos">Repos</a>
-                  </li>
-               </ul>{' '}
-            </menu>
-	         {
-	         	propsForRepos?
-			         <Child route = {propsForRepos} />
-		         :
-			         <Child />
-	         }
-         </div>
+			<div className="container">
+				<header>
+					<span className="icn-logo"><i className="fa fa-code" aria-hidden="true"></i></span>
+					<ul className="main-nav">
+						<li><a href="#/home">Home</a></li>
+						<li><a href="#/about">About</a></li>
+						<li><a href="#/teachers">Teachers</a></li>
+						<li><a href="#/courses">Courses</a></li>
+					</ul>
+				</header>{' '}
+				{
+					propsForRepos ?
+						<Child route={propsForRepos} />
+						:
+						<Child />
+				}
+			</div>
 		);
 	}
 }
-ReactDOM.render(<App/>,
-                  document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
