@@ -28,7 +28,11 @@ class About extends React.Component {
 		);
 	}
 }
-
+class Profesores extends React.Component {
+	render (){
+		return ( <div></div> )
+	}
+}
 class Repos extends React.Component {
 	render() {
 		const { route } = this.props;
@@ -95,6 +99,9 @@ class App extends React.Component {
 		switch (this.state.route) {
 			case '/about':
 				Child = About;
+				break;
+			case '/teachers':
+				Child = Profesores;
 				break;
 			case '/repos':
 				Child = Repos;
