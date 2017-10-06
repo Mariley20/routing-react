@@ -29,8 +29,59 @@ class About extends React.Component {
 	}
 }
 class Profesores extends React.Component {
-	render (){
-		return ( <div></div> )
+	render() {
+		return (
+			<div className="teachers">
+				<h2>Teachers</h2>
+				<div className="row">
+					<div className="col-sm-6">
+						<img className="img-fluid" src="img/angie.png" alt="" />
+						<div className="content">
+							<h3 className="title">Angie McAngular</h3>
+							<p>Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!</p>
+						</div>
+					</div>
+					<div className="col-sm-6">
+						<img className="img-fluid" src="img/nodestradamus.png" alt="" />
+						<div className="content">
+							<h3 className="title">NodeStradamus</h3>
+							<p>'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps.</p>
+						</div>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-sm-6">
+						<img className="img-fluid" src="img/geo.png" alt="" />
+						<div className="content">
+							<h3 className="title">Geo 'Lo' Cation</h3>
+							<p>Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code.</p>
+						</div>
+					</div>
+					<div className="col-sm-6">
+						<img className="img-fluid" src="img/ecma.png" alt="" />
+						<div className="content">
+							<h3 className="title">Ecma Scriptnstuff</h3>
+							<p>Ecma found her passion for computers and programming over 15 years ago. She is excited to introduce people to the wonderful world of JavaScript.</p>
+						</div>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-sm-6">
+						<img className="img-fluid" src="img/jay.png" alt="" />
+						<div className="content">
+							<h3 className="title">Jay Query</h3>
+							<p>Jay is a developer, author of CSS: The Missing Manual, JavaScript & jQuery: The Missing Manual, and web development teacher.</p>
+						</div>
+					</div>
+					<div className="col-sm-6">
+						<img className="img-fluid" src="img/json.png" alt="" />
+						<div className="content">
+							<h3 className="title">Json Babel</h3>
+							<p>All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job.</p>
+						</div>
+					</div>
+				</div>
+			</div>)
 	}
 }
 class Repos extends React.Component {
@@ -59,10 +110,18 @@ class Repos extends React.Component {
 			<div className="main-content courses">
 				<div className="course-header group">
 					<h2>REPOS</h2>
-					<ul className="course-nav">
-						<li><a href='#/repos/html'>HTML</a></li>
-						<li><a href='#/repos/css'>CSS</a></li>
-						<li><a href='#/repos/javascript'>JavaScript</a></li>
+					<ul className="nav nav-pills mb-3" >
+						<li className="nav-item">
+							<a className="nav-link active" data-toggle="pill" href="#/repos/html" role="tab" aria-controls="pills-home" aria-expanded="true">HTML</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" data-toggle="pill" href="#/repos/css" role="tab" aria-controls="pills-profile" aria-expanded="true">CSS</a>
+						</li>
+					</ul>
+					<ul className="nav nav-pills mb-3">
+						<li className="nav-item"><a className="nav-link" href='#/repos/html'>HTML</a></li>
+						<li className="nav-item"><a className="nav-link" href='#/repos/css'>CSS</a></li>
+						<li className="nav-item"><a className="nav-link" href='#/repos/javascript'>JavaScript</a></li>
 					</ul>
 
 					<ul>
@@ -103,6 +162,9 @@ class App extends React.Component {
 			case '/teachers':
 				Child = Profesores;
 				break;
+			// case '/teachers':
+			// 	Child = Profesores;
+			// 	break;
 			case '/repos':
 				Child = Repos;
 				break;
@@ -123,15 +185,21 @@ class App extends React.Component {
 		}
 		return (
 			<div className="container">
-				<header>
-					<span className="icn-logo"><i className="fa fa-code" aria-hidden="true"></i></span>
-					<ul className="main-nav">
-						<li><a href="#/home">Home</a></li>
-						<li><a href="#/about">About</a></li>
-						<li><a href="#/teachers">Teachers</a></li>
-						<li><a href="#/courses">Courses</a></li>
-					</ul>
-				</header>{' '}
+				<nav className="navbar navbar-expand-lg navbar-light bg-light">
+					<a className="navbar-brand" href="#">Navbar</a>
+					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span className="navbar-toggler-icon"></span>
+					</button>
+					<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<div className="navbar-nav ml-auto">
+							<a className="nav-item nav-link active" href="#/home">Home <span className="sr-only">(current)</span></a>
+							<a className="nav-item nav-link" href="#/about">About</a>
+							<a className="nav-item nav-link" href="#/teachers">Teachers</a>
+							<a className="nav-item nav-link" href="#/repos">Courses</a>
+						</div>
+					</div>
+				</nav>
+
 				{
 					propsForRepos ?
 						<Child route={propsForRepos} />
