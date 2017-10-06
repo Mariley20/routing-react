@@ -28,7 +28,7 @@ class About extends React.Component {
 		);
 	}
 }
-class Profesores extends React.Component {
+class teachers extends React.Component {
 	render() {
 		return (
 			<div className="teachers">
@@ -109,17 +109,9 @@ class Repos extends React.Component {
 		return (
 			<div className="main-content courses">
 				<div className="course-header group">
-					<h2>REPOS</h2>
-					<ul className="nav nav-pills mb-3" >
-						<li className="nav-item">
-							<a className="nav-link active" data-toggle="pill" href="#/repos/html" role="tab" aria-controls="pills-home" aria-expanded="true">HTML</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" data-toggle="pill" href="#/repos/css" role="tab" aria-controls="pills-profile" aria-expanded="true">CSS</a>
-						</li>
-					</ul>
+					<h2>Cuurses</h2>
 					<ul className="nav nav-pills mb-3">
-						<li className="nav-item"><a className="nav-link" href='#/repos/html'>HTML</a></li>
+						<li className="nav-item"><a className="nav-link active" href='#/repos/html'>HTML</a></li>
 						<li className="nav-item"><a className="nav-link" href='#/repos/css'>CSS</a></li>
 						<li className="nav-item"><a className="nav-link" href='#/repos/javascript'>JavaScript</a></li>
 					</ul>
@@ -160,11 +152,8 @@ class App extends React.Component {
 				Child = About;
 				break;
 			case '/teachers':
-				Child = Profesores;
+				Child = teachers;
 				break;
-			// case '/teachers':
-			// 	Child = Profesores;
-			// 	break;
 			case '/repos':
 				Child = Repos;
 				break;
