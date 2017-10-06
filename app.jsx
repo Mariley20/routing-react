@@ -218,7 +218,7 @@ class Repos extends React.Component {
 				<div className="course-header group">
 					<h2>Cuurses</h2>
 					<ul className="nav nav-pills mb-3">
-						<li className="nav-item"><a className="nav-link active" href='#/repos/html'>HTML</a></li>
+						<li className="nav-item"><a className="nav-link" href='#/repos/html'>HTML</a></li>
 						<li className="nav-item"><a className="nav-link" href='#/repos/css'>CSS</a></li>
 						<li className="nav-item"><a className="nav-link" href='#/repos/javascript'>JavaScript</a></li>
 					</ul>
@@ -306,5 +306,4 @@ class App extends React.Component {
 		);
 	}
 }
-
 ReactDOM.render(<App />, document.getElementById("root"));
