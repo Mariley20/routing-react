@@ -26,6 +26,7 @@ body {
 
 /*teachers*/
 
-.teachers img {
-    /* height: 23vh; */
+.course img {
+    height: 12vh;
+    padding-right: 16px;
 }
